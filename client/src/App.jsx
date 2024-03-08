@@ -1,10 +1,11 @@
 import './App.css'
 import { useEffect } from 'react'
 import { ajax } from './herramientas/ajax'
+import { getCountries } from './herramientas/getCountries';
 
 //APIS para esta app:
 // APIS clima app:
-// -Openwheater
+// -Openwheater(clima por ciudad)
 
 // -Rest Countries
 // Endpoint todos los paises: https://restcountries.com/v3.1/all
@@ -14,14 +15,8 @@ import { ajax } from './herramientas/ajax'
 function App() {
   
   useEffect(() => {
-
-    const options = {
-      method: "GET",
-      url:"https://restcountries.com/v3.1/all"
-    };
-    
     (async () => {
-      const countries = await ajax(options);
+      const countries = await getCountries();
       console.log(countries);
     })()
   },[])
