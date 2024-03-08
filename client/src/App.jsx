@@ -1,6 +1,5 @@
 import './App.css'
-import { useEffect } from 'react'
-import { ajax } from './herramientas/ajax'
+import { useEffect, useState } from 'react'
 import { getCountries } from './herramientas/getCountries';
 
 //APIS para esta app:
@@ -13,13 +12,16 @@ import { getCountries } from './herramientas/getCountries';
 // -Spott
 
 function App() {
+  const [countries, setCountries] = useState([])
   
   useEffect(() => {
     (async () => {
-      const countries = await getCountries();
-      console.log(countries);
+      const countriesResponse = await getCountries();
+      setCountries(countriesResponse)
+      
     })()
-  },[])
+  }, [])
+  console.log(countries);
 
   return (
     <>
@@ -28,10 +30,11 @@ function App() {
       </div>
       <div>
         <h2>Select the countrie:</h2>
-        <select >
-          {countries?.map((country) => {
-            <option value={country.name.common} >{country.name.common}</option>
-          })}
+        <select name='Countrie' >
+          {countries.map(country => 
+            <option value="" key={country.name}>
+              {country.name.common}</option>
+          )}
         </select>
         {/* <select >
           <option>City</option>
