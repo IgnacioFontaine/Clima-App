@@ -1,4 +1,6 @@
 import './App.css'
+import { useEffect } from 'react'
+import { ajax } from './herramientas/ajax'
 
 //APIS para esta app:
 // APIS clima app:
@@ -11,6 +13,19 @@ import './App.css'
 
 function App() {
   
+  useEffect(() => {
+
+    const options = {
+      method: "GET",
+      url:"https://restcountries.com/v3.1/all"
+    };
+    
+    (async () => {
+      const countries = await ajax(options);
+      console.log(countries);
+    })()
+  },[])
+
   return (
     <>
       <div>
@@ -19,11 +34,13 @@ function App() {
       <div>
         <h2>Select the countrie:</h2>
         <select >
-          <option>Countrie</option>
+          {countries?.map((country) => {
+            <option value={country.name.common} >{country.name.common}</option>
+          })}
         </select>
-        <select >
+        {/* <select >
           <option>City</option>
-        </select>
+        </select> */}
       </div>
     </>
   )
