@@ -18,8 +18,11 @@ function App() {
       </div>
       <div>
         <h2>Select the countrie:</h2>
-        <select>
-          
+        <select >
+          <option>Countrie</option>
+        </select>
+        <select >
+          <option>City</option>
         </select>
       </div>
     </>
