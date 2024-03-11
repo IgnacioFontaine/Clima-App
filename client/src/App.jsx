@@ -12,7 +12,8 @@ import { getCountries } from './herramientas/getCountries';
 // -Spott
 
 function App() {
-  const [countries, setCountries] = useState([])
+  const [countries, setCountries] = useState([]);
+  const [selectCountrie, setSelectCountrie] = useState("");
   
   useEffect(() => {
     (async () => {
@@ -20,9 +21,10 @@ function App() {
       setCountries(countriesResponse)
       
     })()
+    
   }, [])
-  console.log(countries);
-
+  
+  
   return (
     <>
       <div>
@@ -32,9 +34,11 @@ function App() {
         <h2>Select the countrie:</h2>
         <select name='Countrie' >
           {countries.map(country => 
-            <option value="" key={country.name}>
+            <option value={country.cca2} key={country.cca2}>
               {country.name.common}</option>
+            
           )}
+
         </select>
         {/* <select >
           <option>City</option>
