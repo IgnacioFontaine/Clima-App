@@ -1,18 +1,13 @@
 import { ajax } from "./ajax";
 
-export const getCities = async (id) => {
+export const getCityes = async () => {
   const options = {
   method: 'GET',
-  url: `https://spott.p.rapidapi.com/places`,
-  params: {
-    type: 'CITY',
-    skip: '0',
-    country: `${id}`,
-    limit: '100',
-  },
+  url: 'https://countries-states-and-cities.p.rapidapi.com/cities',
+  params: {country: 'MX'},
   headers: {
     'X-RapidAPI-Key': '46ac1a98cdmsh1c008577cb9bc71p1a4984jsn7efc71b141f2',
-    'X-RapidAPI-Host': 'spott.p.rapidapi.com'
+    'X-RapidAPI-Host': 'countries-states-and-cities.p.rapidapi.com'
   }
 };
   return await ajax(options)

@@ -1,10 +1,11 @@
 import './App.css'
 import { useEffect, useState } from 'react'
 import { getCountries } from './herramientas/getCountries';
+import { getCityes } from './herramientas/getCities';
 
 //APIS para esta app:
 // APIS clima app:
-// -Openwheater(clima por ciudad)
+//Open Weather API en Rest api
 
 // -Rest Countries
 // Endpoint todos los paises: https://restcountries.com/v3.1/all
@@ -13,22 +14,30 @@ import { getCountries } from './herramientas/getCountries';
 
 function App() {
   const [countries, setCountries] = useState([]);
-  const [selectCountry, setSelectCountry] = useState("");
+  // const [selectCountry, setSelectCountry] = useState(null);
+  // const [allCityes, setAllCityes] = useState([]);
   
   useEffect(() => {
     (async () => {
       const countriesResponse = await getCountries();
-      setCountries(countriesResponse)
-      
+      setCountries(countriesResponse) 
+      const cityes = await getCityes()
+      console.log(cityes);
     })()
-    
   }, [])
+  
 
-  const handleCountry = (event) => {
+  const handleCountry = async (event) => {
     const country = event.currentTarget.value;
-    setSelectCountry(country);
-    console.log("Pais seleccionado:", country);
+    
   }
+
+  // const showCityes = () => {
+  //   if (selectCountry != "") {
+  //     const cityes =  getCities(selectCountry)
+  //     console.log(cityes);
+  //   }
+  // }
   
   
   return (
@@ -37,19 +46,28 @@ function App() {
         <h1>Clima App</h1>
       </div>
       <div>
-        <h2>Select the countrie:</h2>
+        <h2>Select the Country:</h2>
         <select name='Countrie' onChange={handleCountry} >
           {countries.map(country => 
             <option value={country.cca2} key={country.cca2}>
               {country.name.common}</option>
             
           )}
-
         </select>
+      </div>
+      {/* <div>
+        <h2>Select the City:</h2>
+        <select name='City' onChange={handleCity} >
+          {countries.map(country => 
+            <option value={country.cca2} key={country.cca2}>
+              {country.name.common}</option>
+          )}
+        </select>
+      </div> */}
         {/* <select >
           <option>City</option>
         </select> */}
-      </div>
+      
     </>
   )
 }
