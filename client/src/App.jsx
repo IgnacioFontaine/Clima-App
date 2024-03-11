@@ -13,7 +13,7 @@ import { getCountries } from './herramientas/getCountries';
 
 function App() {
   const [countries, setCountries] = useState([]);
-  const [selectCountrie, setSelectCountrie] = useState("");
+  const [selectCountry, setSelectCountry] = useState("");
   
   useEffect(() => {
     (async () => {
@@ -23,6 +23,12 @@ function App() {
     })()
     
   }, [])
+
+  const handleCountry = (event) => {
+    const country = event.currentTarget.value;
+    setSelectCountry(country);
+    console.log("Pais seleccionado:", country);
+  }
   
   
   return (
@@ -32,7 +38,7 @@ function App() {
       </div>
       <div>
         <h2>Select the countrie:</h2>
-        <select name='Countrie' >
+        <select name='Countrie' onChange={handleCountry} >
           {countries.map(country => 
             <option value={country.cca2} key={country.cca2}>
               {country.name.common}</option>
