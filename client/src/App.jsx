@@ -21,14 +21,16 @@ function App() {
     (async () => {
       const countriesResponse = await getCountries();
       setCountries(countriesResponse) 
-      const coordenates = await getArgentinianCoordenates()
+      const coordenates = await getArgentinianCoordenates(cordoba)
       setSelectCity(coordenates)
       
     })()
   }, [])
 
-  const latitud = selectCity.provincias[0]['centroide']['lat'];
-  const longitud = selectCity.provincias[0]['centroide']['lon'];
+  console.log(selectCity.provincias[0].centroide.lon);
+  console.log("-----------------------------------");
+  const latitud = selectCity.provincias[0].centroide.lat
+  const longitud = selectCity.provincias[0].centroide.lon
 
   console.log("Latitud: ", + latitud);
   console.log("-----------------------------------");

@@ -12,11 +12,12 @@ export const getCoordenates = async () => {
   return await ajax(options)
 }
 
-export const getArgentinianCoordenates = async () => {
+export const getArgentinianCoordenates = async (nombre) => {
+  
 
   const options = {
   method: 'GET', 
-  url: `https://apis.datos.gob.ar/georef/api/provincias?nombre=cordoba`
+  url: `https://apis.datos.gob.ar/georef/api/provincias?nombre=${nombre}`
 };
   return await ajax(options)
 }
