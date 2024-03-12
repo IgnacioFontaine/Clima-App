@@ -2,6 +2,7 @@ import './App.css'
 import { useEffect, useState } from 'react'
 import { getCountries } from './herramientas/getCountries';
 import { getArgentinianCoordenates } from './herramientas/getCoordenates';
+import { getWeather } from './herramientas/getWeather';
 import argentinianCities from './herramientas/cities';
 
 //APIS para esta app:
@@ -14,37 +15,42 @@ import argentinianCities from './herramientas/cities';
 // -Spott
 
 function App() {
-  const [countries, setCountries] = useState([]);
+  const [coordenates, setCordenates] = useState(null);
   const [selectCity, setSelectCity] = useState(null);
   const [allCityes, setAllCityes] = useState(argentinianCities);
   
   useEffect(() => {
     (async () => {
-      const countriesResponse = await getCountries();
-      setCountries(countriesResponse) 
-      const coordenates = await getArgentinianCoordenates(selectCity)
-      console.log(coordenates.provincias);
+      // const countriesResponse = await getCountries();
+      // setCountries(countriesResponse) 
+      const coordenates_response = await getArgentinianCoordenates(selectCity);
+      setCordenates(coordenates_response)
       
     })()
   }, [selectCity])
 
 
-  // console.log(selectCity.provincias[0].centroide.lon);
-  // console.log("-----------------------------------");
-  // const latitud = selectCity.provincias[0].centroide.lat
-  // const longitud = selectCity.provincias[0].centroide.lon
+  console.log(coordenates);
+  console.log("-----------------------------------");
+  const latitud = coordenates.provincias[0].centroide.lat
+  const longitud = coordenates.provincias[0].centroide.lon
 
-  // console.log("Latitud: ", + latitud);
-  // console.log("-----------------------------------");
-  // console.log("Longitud: ", + longitud);
+  console.log("Latitud: ", + latitud);
+  console.log("-----------------------------------");
+  console.log("Longitud: ", + longitud);
+
+  // const handleTemp = async() => {
+  //   const temp = await getWeather({ latitud, longitud });
+  //   console.log(temp);
+  // }
   
 
   const handleCity = async (event) => {
     const city = event.currentTarget.value;
     setSelectCity(city);
+    
   }
 
-  console.log(selectCity);
   
   return (
     <>
