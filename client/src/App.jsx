@@ -22,11 +22,11 @@ function App() {
     (async () => {
       const countriesResponse = await getCountries();
       setCountries(countriesResponse) 
-      // const coordenates = await getArgentinianCoordenates(cordoba)
-      // setSelectCity(coordenates)
+      const coordenates = await getArgentinianCoordenates(selectCity)
+      console.log(coordenates.provincias);
       
     })()
-  }, [])
+  }, [selectCity])
 
 
   // console.log(selectCity.provincias[0].centroide.lon);
@@ -39,18 +39,12 @@ function App() {
   // console.log("Longitud: ", + longitud);
   
 
-  const handleCountry = async (event) => {
-    const country = event.currentTarget.value;
-    
+  const handleCity = async (event) => {
+    const city = event.currentTarget.value;
+    setSelectCity(city);
   }
 
-  // const showCityes = () => {
-  //   if (selectCountry != "") {
-  //     const cityes =  getCities(selectCountry)
-  //     console.log(cityes);
-  //   }
-  // }
-  
+  console.log(selectCity);
   
   return (
     <>
@@ -58,8 +52,8 @@ function App() {
         <h1>Argentinian Clima App</h1>
       </div>
       <div>
-        <h2>Select the Country:</h2>
-        <select name='Cities' onChange={handleCountry} >
+        <h2>Select the City:</h2>
+        <select name='Cities' onChange={handleCity} >
           {allCityes.map(city => 
             <option value={city.name} key={city.id}>
               {city.name}</option>
