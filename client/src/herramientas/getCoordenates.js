@@ -14,7 +14,6 @@ export const getCoordenates = async () => {
 
 export const getArgentinianCoordenates = async (nombre) => {
   
-
   const options = {
   method: 'GET', 
   url: `https://apis.datos.gob.ar/georef/api/provincias?nombre=${nombre}`
