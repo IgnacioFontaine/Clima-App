@@ -1,7 +1,7 @@
 import './App.css'
 import { useEffect, useState } from 'react'
 import { getCountries } from './herramientas/getCountries';
-import { getCityes } from './herramientas/getCities';
+import { getArgentinianCoordenates } from './herramientas/getCoordenates';
 
 //APIS para esta app:
 // APIS clima app:
@@ -14,17 +14,26 @@ import { getCityes } from './herramientas/getCities';
 
 function App() {
   const [countries, setCountries] = useState([]);
-  // const [selectCountry, setSelectCountry] = useState(null);
+  const [selectCity, setSelectCity] = useState(null);
   // const [allCityes, setAllCityes] = useState([]);
   
   useEffect(() => {
     (async () => {
       const countriesResponse = await getCountries();
       setCountries(countriesResponse) 
-      const cityes = await getCityes()
-      console.log(cityes);
+      const coordenates = await getArgentinianCoordenates()
+      setSelectCity(coordenates)
+      
     })()
   }, [])
+
+  console.log(selectCity.provincias[0]['centroide']);
+  // const latitud = .provincias[0]['centroide']['lat'];
+  // const longitud = .provincias[0]['centroide']['lon'];
+
+  // console.log("Latitud: ", + latitud);
+  // console.log("-----------------------------------");
+  // console.log("Longitud: ", + longitud);
   
 
   const handleCountry = async (event) => {
