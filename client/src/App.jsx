@@ -27,13 +27,12 @@ function App() {
     })()
   }, [])
 
-  console.log(selectCity.provincias[0]['centroide']);
-  // const latitud = .provincias[0]['centroide']['lat'];
-  // const longitud = .provincias[0]['centroide']['lon'];
+  const latitud = selectCity.provincias[0]['centroide']['lat'];
+  const longitud = selectCity.provincias[0]['centroide']['lon'];
 
-  // console.log("Latitud: ", + latitud);
-  // console.log("-----------------------------------");
-  // console.log("Longitud: ", + longitud);
+  console.log("Latitud: ", + latitud);
+  console.log("-----------------------------------");
+  console.log("Longitud: ", + longitud);
   
 
   const handleCountry = async (event) => {
