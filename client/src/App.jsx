@@ -2,6 +2,7 @@ import './App.css'
 import { useEffect, useState } from 'react'
 import { getCountries } from './herramientas/getCountries';
 import { getArgentinianCoordenates } from './herramientas/getCoordenates';
+import argentinianCities from './herramientas/cities';
 
 //APIS para esta app:
 // APIS clima app:
@@ -15,26 +16,27 @@ import { getArgentinianCoordenates } from './herramientas/getCoordenates';
 function App() {
   const [countries, setCountries] = useState([]);
   const [selectCity, setSelectCity] = useState(null);
-  // const [allCityes, setAllCityes] = useState([]);
+  const [allCityes, setAllCityes] = useState(argentinianCities);
   
   useEffect(() => {
     (async () => {
       const countriesResponse = await getCountries();
       setCountries(countriesResponse) 
-      const coordenates = await getArgentinianCoordenates(cordoba)
-      setSelectCity(coordenates)
+      // const coordenates = await getArgentinianCoordenates(cordoba)
+      // setSelectCity(coordenates)
       
     })()
   }, [])
 
-  console.log(selectCity.provincias[0].centroide.lon);
-  console.log("-----------------------------------");
-  const latitud = selectCity.provincias[0].centroide.lat
-  const longitud = selectCity.provincias[0].centroide.lon
 
-  console.log("Latitud: ", + latitud);
-  console.log("-----------------------------------");
-  console.log("Longitud: ", + longitud);
+  // console.log(selectCity.provincias[0].centroide.lon);
+  // console.log("-----------------------------------");
+  // const latitud = selectCity.provincias[0].centroide.lat
+  // const longitud = selectCity.provincias[0].centroide.lon
+
+  // console.log("Latitud: ", + latitud);
+  // console.log("-----------------------------------");
+  // console.log("Longitud: ", + longitud);
   
 
   const handleCountry = async (event) => {
@@ -53,15 +55,14 @@ function App() {
   return (
     <>
       <div>
-        <h1>Clima App</h1>
+        <h1>Argentinian Clima App</h1>
       </div>
       <div>
         <h2>Select the Country:</h2>
-        <select name='Countrie' onChange={handleCountry} >
-          {countries.map(country => 
-            <option value={country.cca2} key={country.cca2}>
-              {country.name.common}</option>
-            
+        <select name='Cities' onChange={handleCountry} >
+          {allCityes.map(city => 
+            <option value={city.name} key={city.id}>
+              {city.name}</option>
           )}
         </select>
       </div>
