@@ -1,8 +1,8 @@
 import './App.css'
 import { useEffect, useState } from 'react'
-import { getCountries } from './herramientas/getCountries';
+// import { getCountries } from './herramientas/getCountries';
 import { getArgentinianCoordenates } from './herramientas/getCoordenates';
-import { getWeather } from './herramientas/getWeather';
+// import { getWeather } from './herramientas/getWeather';
 import argentinianCities from './herramientas/cities';
 
 //APIS para esta app:
@@ -41,7 +41,7 @@ function App() {
     console.log("Longitud: ", + longitud);
 
     // (async () => {
-      // const temp = await getWeather({ latitud, longitud });
+      // const temp = await getWeather( latitud, longitud );
       //  console.log(temp);
       
     // })()
