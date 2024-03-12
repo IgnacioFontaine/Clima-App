@@ -40,10 +40,11 @@ function App() {
     console.log("-----------------------------------");
     console.log("Longitud: ", + longitud);
 
-    // const handleTemp = async() => {
-    //   const temp = await getWeather({ latitud, longitud });
-    //   console.log(temp);
-    // }
+    // (async () => {
+      // const temp = await getWeather({ latitud, longitud });
+      //  console.log(temp);
+      
+    // })()
   }
   
   
