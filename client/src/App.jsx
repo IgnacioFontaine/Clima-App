@@ -16,7 +16,7 @@ import argentinianCities from './herramientas/cities';
 
 function App() {
   const [coordenates, setCordenates] = useState(null);
-  const [selectCity, setSelectCity] = useState(null);
+  const [selectCity, setSelectCity] = useState("Buenos Aires");
   const [allCityes, setAllCityes] = useState(argentinianCities);
   
   useEffect(() => {
@@ -30,19 +30,22 @@ function App() {
   }, [selectCity])
 
 
-  console.log(coordenates);
-  console.log("-----------------------------------");
-  const latitud = coordenates.provincias[0].centroide.lat
-  const longitud = coordenates.provincias[0].centroide.lon
+  if (coordenates != null) {
+    console.log(coordenates);
+    console.log("-----------------------------------");
+    const latitud = coordenates.provincias[0].centroide.lat
+    const longitud = coordenates.provincias[0].centroide.lon
 
-  console.log("Latitud: ", + latitud);
-  console.log("-----------------------------------");
-  console.log("Longitud: ", + longitud);
+    console.log("Latitud: ", + latitud);
+    console.log("-----------------------------------");
+    console.log("Longitud: ", + longitud);
 
-  // const handleTemp = async() => {
-  //   const temp = await getWeather({ latitud, longitud });
-  //   console.log(temp);
-  // }
+    // const handleTemp = async() => {
+    //   const temp = await getWeather({ latitud, longitud });
+    //   console.log(temp);
+    // }
+  }
+  
   
 
   const handleCity = async (event) => {
