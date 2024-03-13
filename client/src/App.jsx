@@ -18,7 +18,7 @@ function App() {
   const [coordenates, setCordenates] = useState(null);
   const [selectCity, setSelectCity] = useState("Buenos Aires");
   const [allCityes, setAllCityes] = useState(argentinianCities);
-  const [temp, setTemp] = useState([]);
+  const [temp, setTemp] = useState(null);
   
   useEffect(() => {
     (async () => {
@@ -48,15 +48,16 @@ function App() {
   //   })()
   // }
   
-  const clave = import.meta.env.VITE_RAPID_API_KEY;
-  console.log(clave);
 
   const handleCity = async (event) => {
     const city = event.currentTarget.value;
     setSelectCity(city);
-    // const temp = await getWeather(city)
-    // console.log(temp);
+    const temp_city = await getWeather(city)
+    setTemp(temp_city)
   }
+
+  const main = temp.main;
+  const weather = temp.weather[0].main;
 
   
   return (
@@ -73,15 +74,18 @@ function App() {
           )}
         </select>
       </div>
-      {temp ? (
+      {temp != null ? (
         <div>
           <div>
             <h2>Wheater</h2>
           </div>
           <div>
-            <img>logoTemp</img>
-            <h4>Temp:</h4>
-
+            <h3>Main:{weather}</h3>
+            {/* <img>logoTemp</img> */}
+            <h4>Temp:  </h4>
+            <h5>Max temp: </h5>
+            <h5>Min temp:  </h5>
+            <h5>humidity: </h5>
           </div>
         </div>
       ):("")}
