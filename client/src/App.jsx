@@ -41,7 +41,8 @@ function App() {
     console.log("Longitud: ", + longitud);
 
     (async (latitud, longitud) => {
-      const temp = await getWeather( latitud, longitud );
+      
+      const temp = await getWeather({latitud, longitud});
        console.log(temp);
       
     })()
