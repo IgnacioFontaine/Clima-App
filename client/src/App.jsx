@@ -55,8 +55,9 @@ function App() {
     const temp_city = await getWeather(city)
     setTemp(temp_city)
   }
-
+  console.log(temp);
   const main = temp.main;
+  console.log(main);
   const weather = temp.weather[0].main;
 
   
@@ -80,9 +81,9 @@ function App() {
             <h2>Wheater</h2>
           </div>
           <div>
-            <h3>Main:{weather}</h3>
-            {/* <img>logoTemp</img> */}
-            <h4>Temp: {main.temp} </h4>
+            <h3>Main: {weather}</h3> 
+             {/* <img>logoTemp</img>  */}
+             <h4>Temp: {main.temp} </h4>
             <h5>Max temp: {main.temp_max} </h5>
             <h5>Min temp: {main.temp_min} </h5>
             <h5>humidity: {main.humidity}% </h5>
