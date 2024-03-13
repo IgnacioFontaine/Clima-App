@@ -1,7 +1,8 @@
 import { ajax } from "./ajax";
-const APP_KEY = import.meta.env.VITE_APP_KEY;
+
 
 export const getWeather = async (name) => {
+  const APP_KEY = import.meta.env.VITE_APP_KEY;
   const city_name = name;
  
   const options = {

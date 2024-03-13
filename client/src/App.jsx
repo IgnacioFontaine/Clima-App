@@ -18,6 +18,7 @@ function App() {
   const [coordenates, setCordenates] = useState(null);
   const [selectCity, setSelectCity] = useState("Buenos Aires");
   const [allCityes, setAllCityes] = useState(argentinianCities);
+  const [temp, setTemp] = useState([]);
   
   useEffect(() => {
     (async () => {
@@ -30,30 +31,31 @@ function App() {
   }, [selectCity])
 
 
-  if (coordenates != null) {
-    // console.log(coordenates);
-    console.log("-----------------------------------");
-    const latitud = coordenates.provincias[0].centroide.lat
-    const longitud = coordenates.provincias[0].centroide.lon
+  // if (coordenates != null) {
+  //   console.log("-----------------------------------");
+  //   const latitud = coordenates.provincias[0].centroide.lat
+  //   const longitud = coordenates.provincias[0].centroide.lon
 
-    console.log("Latitud: ", + latitud);
-    console.log("-----------------------------------");
-    console.log("Longitud: ", + longitud);
+  //   console.log("Latitud: ", + latitud);
+  //   console.log("-----------------------------------");
+  //   console.log("Longitud: ", + longitud);
 
-    (async (latitud, longitud) => {
+  //   (async (latitud, longitud) => {
       
-      const temp = await getWeather({latitud, longitud});
-       console.log(temp);
+  //     const temp = await getWeather({latitud, longitud});
+  //      console.log(temp);
       
-    })()
-  }
+  //   })()
+  // }
   
-  
+  const clave = import.meta.env.VITE_RAPID_API_KEY;
+  console.log(clave);
 
   const handleCity = async (event) => {
     const city = event.currentTarget.value;
     setSelectCity(city);
-    
+    // const temp = await getWeather(city)
+    // console.log(temp);
   }
 
   
@@ -71,6 +73,19 @@ function App() {
           )}
         </select>
       </div>
+      {temp ? (
+        <div>
+          <div>
+            <h2>Wheater</h2>
+          </div>
+          <div>
+            <img>logoTemp</img>
+            <h4>Temp:</h4>
+
+          </div>
+        </div>
+      ):("")}
+      
     </>
   )
 }
