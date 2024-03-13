@@ -2,7 +2,7 @@ import './App.css'
 import { useEffect, useState } from 'react'
 // import { getCountries } from './herramientas/getCountries';
 import { getArgentinianCoordenates } from './herramientas/getCoordenates';
-// import { getWeather } from './herramientas/getWeather';
+import { getWeather } from './herramientas/getWeather';
 import argentinianCities from './herramientas/cities';
 
 //APIS para esta app:
@@ -31,7 +31,7 @@ function App() {
 
 
   if (coordenates != null) {
-    console.log(coordenates);
+    // console.log(coordenates);
     console.log("-----------------------------------");
     const latitud = coordenates.provincias[0].centroide.lat
     const longitud = coordenates.provincias[0].centroide.lon
@@ -40,11 +40,11 @@ function App() {
     console.log("-----------------------------------");
     console.log("Longitud: ", + longitud);
 
-    // (async () => {
-      // const temp = await getWeather( latitud, longitud );
-      //  console.log(temp);
+    (async (latitud, longitud) => {
+      const temp = await getWeather( latitud, longitud );
+       console.log(temp);
       
-    // })()
+    })()
   }
   
   
@@ -70,19 +70,6 @@ function App() {
           )}
         </select>
       </div>
-      {/* <div>
-        <h2>Select the City:</h2>
-        <select name='City' onChange={handleCity} >
-          {countries.map(country => 
-            <option value={country.cca2} key={country.cca2}>
-              {country.name.common}</option>
-          )}
-        </select>
-      </div> */}
-        {/* <select >
-          <option>City</option>
-        </select> */}
-      
     </>
   )
 }
