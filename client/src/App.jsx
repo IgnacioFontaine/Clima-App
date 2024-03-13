@@ -82,10 +82,10 @@ function App() {
           <div>
             <h3>Main:{weather}</h3>
             {/* <img>logoTemp</img> */}
-            <h4>Temp:  </h4>
-            <h5>Max temp: </h5>
-            <h5>Min temp:  </h5>
-            <h5>humidity: </h5>
+            <h4>Temp: {main.temp} </h4>
+            <h5>Max temp: {main.temp_max} </h5>
+            <h5>Min temp: {main.temp_min} </h5>
+            <h5>humidity: {main.humidity}% </h5>
           </div>
         </div>
       ):("")}
