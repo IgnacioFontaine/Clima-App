@@ -7,7 +7,7 @@ export const getWeather = async (name) => {
  
   const options = {
     method: 'GET',
-    url: `https://api.openweathermap.org/data/2.5/weather?q=${city_name},AR&appid=${APP_KEY}}&units=metric`
+    url: `https://api.openweathermap.org/data/2.5/weather?q=${city_name},AR&appid=${APP_KEY}&units=metric`
   }
   
   return await ajax(options)
