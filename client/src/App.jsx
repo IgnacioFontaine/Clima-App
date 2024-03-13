@@ -1,7 +1,5 @@
 import './App.css'
-import { useEffect, useState } from 'react'
-// import { getCountries } from './herramientas/getCountries';
-import { getArgentinianCoordenates } from './herramientas/getCoordenates';
+import {useState } from 'react'
 import { getWeather } from './herramientas/getWeather';
 import argentinianCities from './herramientas/cities';
 
@@ -18,16 +16,6 @@ function App() {
   const [selectCity, setSelectCity] = useState("Buenos Aires");
   const [allCityes, setAllCityes] = useState(argentinianCities);
   const [temp, setTemp] = useState(null);
-  
-  useEffect(() => {
-    (async () => {
-      // const countriesResponse = await getCountries();
-      // setCountries(countriesResponse) 
-      const coordenates_response = await getArgentinianCoordenates(selectCity);
-      setCordenates(coordenates_response)
-      
-    })()
-  }, [selectCity])
   
 
   const handleCity = async (event) => {
@@ -61,22 +49,21 @@ function App() {
           )}
         </select>
       </div>
-      {temp ? (
+      {temp ?? (
         <div>
           <div>
             <h2>Wheater</h2>
           </div>
           <div>
-            <h3>Main: {weather}</h3> 
+            <h3>Main: {temp.weather[0].main}</h3> 
              {/* <img>logoTemp</img>  */}
-             <h4>Temp: {main.temp} </h4>
-            <h5>Max temp: {main.temp_max} </h5>
-            <h5>Min temp: {main.temp_min} </h5>
-            <h5>humidity: {main.humidity}% </h5>
+             <h4>Temp: {temp.main.temp} </h4>
+            <h5>Max temp: {temp.main.temp_max} </h5>
+            <h5>Min temp: {temp.main.temp_min} </h5>
+            <h5>humidity: {temp.main.humidity}% </h5>
           </div>
         </div>
-      ):("")}
-      
+      )}
     </>
   )
 }
