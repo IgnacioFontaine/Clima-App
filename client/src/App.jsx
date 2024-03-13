@@ -25,15 +25,7 @@ function App() {
     setTemp(temp_city)
   }
 
-  if (temp) {
-    console.log(temp);
-    const main = temp.main;
-    console.log(main);
-    const weather = temp.weather[0].main;
-    return (main,weather)
-  }
   
-
   
   return (
     <>
