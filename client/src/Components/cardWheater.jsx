@@ -9,7 +9,7 @@ function CardWheater({ temp, city }) {
 
   return (
     <>
-      <div className="card shadow-0 border">
+      <div style={{border:"1px solid gray",backdropFilter: 'blur(10px)'}} >
         <div className="card-body p-4">
             <div className="d-flex flex-row align-items-center">
               <div id="icon"><img id="wicon" src={iconurl} alt="Weather icon" /></div>
