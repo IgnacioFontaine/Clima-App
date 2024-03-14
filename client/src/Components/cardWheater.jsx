@@ -19,8 +19,6 @@ function CardWheater({ temp, city }) {
           <p>Max: <strong>{main? main.temp_max : null}°C</strong>, Min: <strong>{main? main.temp_min : null}°C</strong></p>
           <p>Humedad: <strong>{main? main.humidity : null}%</strong></p>
 
-            
-
           </div>
         </div>
       

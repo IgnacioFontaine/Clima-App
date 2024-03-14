@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { getWeather } from './herramientas/getWeather';
 import argentinianCities from './herramientas/cities';
 import CardWheater from './Components/cardWheater';
+import wheaterImage from "./assets/weather-icon-removebg-preview.png"
 
 //APIS para esta app:
 // APIS clima app:
@@ -30,7 +31,10 @@ function App() {
   return (
     <>
       <div className='bg black' >
-        <h1>Argentinian Clima App</h1>
+        <div  >
+          <img src={wheaterImage} style={{height:"150px"}} ></img>
+        </div>
+        <h1>Clima Argentino</h1>
       </div>
       <div>
         <div>
