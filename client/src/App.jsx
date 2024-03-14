@@ -13,6 +13,8 @@ import CardWheater from './Components/cardWheater';
 
 // -Spott
 
+
+
 function App() {
   const [selectCity, setSelectCity] = useState("Buenos Aires");
   const [allCityes, setAllCityes] = useState(argentinianCities);
@@ -28,7 +30,7 @@ function App() {
   
   return (
     <>
-      <div>
+      <div >
         <h1>Argentinian Clima App</h1>
       </div>
       <div>

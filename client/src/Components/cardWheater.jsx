@@ -3,7 +3,6 @@
 function CardWheater({ temp }) {
   const { main, weather } = temp;
 
-  
   return (
     <>
       <div>
