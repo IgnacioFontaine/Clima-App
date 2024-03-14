@@ -30,11 +30,11 @@ function App() {
   
   return (
     <>
-      <div className='bg black' >
-        <div  >
-          <img src={wheaterImage} style={{height:"150px"}} ></img>
+      <div  >
+        <div style={{display:"flex", textAlign:"center"}} >
+          <img src={wheaterImage} style={{ height: "200px", width:"200px", p:1, color:"white"  }} ></img>
+          <h1>Clima Argentino</h1>
         </div>
-        <h1>Clima Argentino</h1>
       </div>
       <div>
         <div>
