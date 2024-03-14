@@ -34,15 +34,20 @@ function App() {
         <h1>Argentinian Clima App</h1>
       </div>
       <div>
-        <h2>Select the City:</h2>
-        <select name='Cities' onChange={handleCity} >
-          {allCityes.map(city => 
-            <option value={city.name} key={city.id}>
-              {city.name}</option>
-          )}
-        </select>
+        <div>
+          <h2>Select the City:</h2>
+          <select name='Cities' onChange={handleCity} >
+            {allCityes.map(city => 
+              <option value={city.name} key={city.id}>
+                {city.name}</option>
+            )}
+          </select>
+        </div>
+        <div>
+        </div>
       </div>
-      {temp && (
+      <div>
+        {temp && (
         <div>
           <div>
             <h2>Wheater</h2>
@@ -50,6 +55,7 @@ function App() {
           <CardWheater temp={temp} />
         </div>
       )}
+      </div>
     </>
   )
 }
