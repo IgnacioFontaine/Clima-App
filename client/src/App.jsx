@@ -29,7 +29,7 @@ function App() {
   
   return (
     <>
-      <div >
+      <div className='bg black' >
         <h1>Argentinian Clima App</h1>
       </div>
       <div>
@@ -52,7 +52,7 @@ function App() {
           <div>
             <h2>Wheater</h2>
           </div>
-          <CardWheater temp={temp} />
+          <CardWheater temp={temp}  />
         </div>
       )}
       </div>
