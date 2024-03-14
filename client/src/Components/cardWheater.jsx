@@ -1,6 +1,6 @@
 
 
-function CardWheater() {
+function CardWheater(temp) {
   
   return (
     <>
