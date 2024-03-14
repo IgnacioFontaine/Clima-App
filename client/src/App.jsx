@@ -1,5 +1,5 @@
 import './App.css'
-import {useState } from 'react'
+import { useState } from 'react'
 import { getWeather } from './herramientas/getWeather';
 import argentinianCities from './herramientas/cities';
 import CardWheater from './Components/cardWheater';
@@ -12,7 +12,6 @@ import CardWheater from './Components/cardWheater';
 // Endpoint todos los paises: https://restcountries.com/v3.1/all
 
 // -Spott
-
 
 
 function App() {
@@ -43,8 +42,9 @@ function App() {
             )}
           </select>
         </div>
-        <div>
-        </div>
+        {/* <div>
+          <img id="imagen" src="C:\Users\Nacho\Desktop\Proyects\Clima App\client\src\assets\mapa_completo-removebg-preview.png"></img>
+        </div> */}
       </div>
       <div>
         {temp && (
