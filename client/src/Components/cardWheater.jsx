@@ -22,7 +22,7 @@ function CardWheater({ temp }) {
         </div>
         <div style={{height:"300px", width:"300px", p:1, justifyContent:"space-around"}} >
             <div >
-              <div id="icon"><img id="wicon" src={iconurl} alt="Weather icon" /></div>
+              <div id="icon"><img id="wicon" src={iconurl} alt="Weather icon" style={{height:"100px", width:"100px", marginTop:"15px"}} /></div>
             </div>
               <p  style={{color:"black"}} >Temperatura actual: <strong>{main? main.temp : null}°C</strong></p>
               <p style={{color:"black"}}>Max: <strong>{main? main.temp_max : null}°C</strong>, Min: <strong>{main? main.temp_min : null}°C</strong></p>
