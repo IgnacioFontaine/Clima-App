@@ -3,8 +3,7 @@ import { useState } from 'react'
 import { getWeather } from './herramientas/getWeather';
 import argentinianCities from './herramientas/cities';
 import CardWheater from './Components/cardWheater';
-import wheaterImage from "./assets/weather-icon-removebg-preview.png"
-import mapa_arg from "./assets/mapa_completo-removebg-preview.png"
+import wheaterImage from './assets/weather-icon-removebg-preview.png'
 
 //APIS para esta app:
 // APIS clima app:
@@ -38,10 +37,8 @@ function App() {
         </div>
       </div>
       
-      <div style={{display:"flex"}}>
-        <div>
-          <img src={mapa_arg} style={{ height: "500px", width:"350px", p:1  }} ></img>
-        </div>
+      <div style={{display:"flex", flexDirection:"column"}}>
+        
         <div>
           <div style={{display:"flex", p:1, justifyContent:"center"}}>
             <h2 style={{ color: "black" }}>Seleccioná la ciudad: </h2>
