@@ -1,10 +1,14 @@
+import argentinianCities from "../herramientas/cities";
+
 function CardWheater({ temp }) {
   const { main, weather, name } = temp;
 
   var iconcode = weather[0].icon;
   var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
 
-  
+  const ciudad = argentinianCities.filter(ciudad => ciudad.name == name);
+  console.log(ciudad[0].mapa);
+
 
   return (
     <>
@@ -20,7 +24,7 @@ function CardWheater({ temp }) {
           </div>
       </div>
       <div>
-        <div id="image"><img id="1" src={`../assets/Mapas/${name}.jpg`} alt="Mapa Ciudad" /></div>
+        <div id="image"><img id="1" src={ciudad? ciudad[0].mapa : null} alt="Mapa Ciudad" /></div>
       </div>
     </>
   )
