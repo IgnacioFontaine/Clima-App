@@ -12,7 +12,7 @@ function CardWheater({ temp }) {
 
   return (
     <>
-      <div style={{ border: "1px solid gray", backgroundColor:"#C7FFFE",backdropFilter: 'blur(10px)', display:"flex", borderRadius:"4px" }} >
+      <div style={{ border: "1px solid gray", backgroundColor:"#E7FFFF",backdropFilter: 'blur(10px)', display:"flex", borderRadius:"4px" }} >
         <div>
           {ciudad[0]?(<div>
           <div id="image"><img id="1" src={ciudad[0].mapa} style={{ height: "300px", width:"250px", p:1  }}  alt="Mapa Ciudad" /></div>

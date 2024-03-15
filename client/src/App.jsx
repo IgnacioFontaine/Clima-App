@@ -5,16 +5,6 @@ import argentinianCities from './herramientas/cities';
 import CardWheater from './Components/cardWheater';
 import wheaterImage from './assets/weather-icon-removebg-preview.png'
 
-//APIS para esta app:
-// APIS clima app:
-//Open Weather API en Rest api
-
-// -Rest Countries
-// Endpoint todos los paises: https://restcountries.com/v3.1/all
-
-// -Spott
-
-
 function App() {
   const [selectCity, setSelectCity] = useState("Buenos Aires");
   const [allCityes, setAllCityes] = useState(argentinianCities);
@@ -29,11 +19,11 @@ function App() {
   }
   
   return (
-    <>
+    <div style={{ backdropFilter: 'blur(10px)', padding:"70px"}}>
       <div  >
         <div style={{display:"flex", textAlign:"center"}} >
           <img src={wheaterImage} style={{ height: "200px", width:"200px", p:1, color:"black"  }} ></img>
-          <h1>Clima Argentino</h1>
+          <h1 style={{fontFamily:"serif"}}>Clima Argentino</h1>
         </div>
       </div>
       
@@ -41,7 +31,7 @@ function App() {
         
         <div>
           <div style={{display:"flex", p:1, justifyContent:"center"}}>
-            <h2 style={{ color: "black" }}>Seleccioná la ciudad: </h2>
+            <h2 style={{ color: "white",fontFamily:"serif" }}>Seleccioná la ciudad: </h2>
             <div style={{display:"flex", flexDirection:"column"}}>
               <select name='Cities' onChange={handleCity} style={{ height:"35px", borderRadius:"5px",marginTop:"20px", marginLeft:"10px" }} >
             {allCityes.map(city => 
@@ -61,7 +51,7 @@ function App() {
         </div>
       </div>
       
-    </>
+    </div>
   )
 }
 
