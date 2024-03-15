@@ -44,7 +44,7 @@ function App() {
         </div>
         <div>
           <div style={{display:"flex", p:1, justifyContent:"center"}}>
-            <h2 style={{ color: "black" }}>Select the City:</h2>
+            <h2 style={{ color: "black" }}>Seleccioná la ciudad: </h2>
             <div style={{display:"flex", flexDirection:"column"}}>
               <select name='Cities' onChange={handleCity} style={{ height:"35px", borderRadius:"5px",marginTop:"20px", marginLeft:"10px" }} >
             {allCityes.map(city => 
