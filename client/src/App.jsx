@@ -33,7 +33,7 @@ function App() {
     <>
       <div  >
         <div style={{display:"flex", textAlign:"center"}} >
-          <img src={wheaterImage} style={{ height: "200px", width:"200px", p:1, color:"white"  }} ></img>
+          <img src={wheaterImage} style={{ height: "200px", width:"200px", p:1, color:"black"  }} ></img>
           <h1>Clima Argentino</h1>
         </div>
       </div>
