@@ -54,7 +54,7 @@ function App() {
             </select>
             <div>
               {temp && (
-              <div>
+              <div style={{marginTop:"60px"}}>
                 <CardWheater temp={temp}  />
               </div>
             )}
