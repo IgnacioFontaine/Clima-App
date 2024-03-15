@@ -1,5 +1,6 @@
 import Jujuy_mapa from "../assets/Mapas/Jujuy.jpg"
 import BuenosAires_mapa from "../assets/Mapas/BuenosAires.jpg"
+import CiudadAutonomaDeBuenosAires_mapa from "../assets/Mapas/CiudadAutonomaDeBuenosAires.jpg"
 import Chaco_mapa from "../assets/Mapas/Chaco.jpg"
 import Córdoba_mapa from "../assets/Mapas/Cordoba.jpg"
 import Corrientes_mapa from "../assets/Mapas/Corrientes.jpg"
@@ -20,12 +21,13 @@ import RioNegro_mapa from "../assets/Mapas/RioNegro.jpg"
 import SanJuan_mapa from "../assets/Mapas/SanJuan.jpg"
 import SantaFe_mapa from "../assets/Mapas/SantaFe.jpg"
 import SantiagoDelEstero_mapa from "../assets/Mapas/SantiagoDelEstero.jpg"
+import Catamarca_mapa from "../assets/Mapas/Catamarca.jpg"
 
 
 const argentinianCities =
   [ { id:1, name: "Buenos Aires", value:"La Plata",mapa: BuenosAires_mapa },
-    { id:2, name: "Ciudad Autonoma de Buenos Aires",value:"Ciudad Autonoma de Buenos Aires", mapa:  },
-    { id:3, name: "Catamarca", value:"San Fernando del Valle de Catamarca", mapa: BuenosAires_mapa},
+    { id:2, name: "Ciudad Autonoma de Buenos Aires",value:"Buenos Aires F.D.", mapa:  CiudadAutonomaDeBuenosAires_mapa},
+    { id:3, name: "Catamarca", value:"San Fernando del Valle de Catamarca", mapa: Catamarca_mapa},
     { id:4, name: "Chaco",value:"Resistencia", mapa: Chaco_mapa},
     { id:5, name: "Chubut",value:"Rawson", mapa: Chubut_mapa},
     { id:6, name: "Cordoba",value:"Cordoba", mapa: Córdoba_mapa},
@@ -46,6 +48,6 @@ const argentinianCities =
     { id:21, name: "Santa Fe",value:"Santa Fe", mapa: SantaFe_mapa},
     { id:22, name: "Santiago del Estero",value:"Santiago del Estero", mapa: SantiagoDelEstero_mapa},
     { id:23, name: "Tierra del Fuego", value:"Ushuaia", mapa: TierraDelFuego_mapa},
-    { id:24, name: "Tucuman",value:"San Miguel de Tucumán", mapa:Tucuman_mapa}]
+    { id: 24, name: "Tucuman", value: "San Miguel de Tucumán", mapa: Tucuman_mapa }]
 
 export default argentinianCities;
