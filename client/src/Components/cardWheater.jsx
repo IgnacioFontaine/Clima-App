@@ -1,3 +1,14 @@
+import Jujuy_mapa from "../assets/Mapas/Jujuy.jpg"
+import BuenosAires_mapa from "../assets/Mapas/BuenosAires.jpg"
+import Chaco_mapa from "../assets/Mapas/Chaco.jpg"
+import Córdoba_mapa from "../assets/Mapas/Córdoba.jpg"
+import Corrientes_mapa from "../assets/Mapas/Corrientes.jpg"
+import LaPampa_mapa from "../assets/Mapas/LaPampa.jpg"
+import LaRioja_mapa from "../assets/Mapas/LaRioja.jpg"
+import Mendoza_mapa from "../assets/Mapas/Mendoza.jpg"
+import EntreRios_mapa from "../assets/Mapas/EntreRios.jpg"
+import EntreRios_mapa from "../assets/Mapas/EntreRios.jpg"
+import EntreRios_mapa from "../assets/Mapas/EntreRios.jpg"
 
 
 function CardWheater({ temp }) {
