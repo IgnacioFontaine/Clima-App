@@ -4,6 +4,7 @@ import { getWeather } from './herramientas/getWeather';
 import argentinianCities from './herramientas/cities';
 import CardWheater from './Components/cardWheater';
 import wheaterImage from "./assets/weather-icon-removebg-preview.png"
+import mapa_arg from "./assets/mapa_completo-removebg-preview.png"
 
 //APIS para esta app:
 // APIS clima app:
@@ -36,8 +37,13 @@ function App() {
           <h1>Clima Argentino</h1>
         </div>
       </div>
-      <div>
-        <div style={{display:"flex", p:1, justifyContent:"center"}}>
+      
+      <div style={{display:"flex"}}>
+        <div>
+          <img src={mapa_arg} style={{ height: "500px", width:"350px", p:1  }} ></img>
+        </div>
+        <div>
+          <div style={{display:"flex", p:1, justifyContent:"center"}}>
           <h2 style={{color:"black"}}>Select the City:</h2>
           <select name='Cities' onChange={handleCity} style={{ height:"35px", borderRadius:"5px",marginTop:"20px", marginLeft:"10px" }} >
             {allCityes.map(city => 
@@ -46,9 +52,7 @@ function App() {
             )}
           </select>
         </div>
-        {/* <div>
-          <img id="imagen" src="C:\Users\Nacho\Desktop\Proyects\Clima App\client\src\assets\mapa_completo-removebg-preview.png"></img>
-        </div> */}
+        </div>
       </div>
       <div>
         {temp && (
