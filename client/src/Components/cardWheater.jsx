@@ -11,7 +11,7 @@ function CardWheater({ temp }) {
 
   return (
     <>
-      <div style={{border:"1px solid gray", backgroundColor:"gray",backdropFilter: 'blur(10px)'}} >
+      <div style={{border:"1px solid gray", backgroundColor:"#A5A5A5",backdropFilter: 'blur(10px)'}} >
         <div >
             <div >
               <div id="icon"><img id="wicon" src={iconurl} alt="Weather icon" /></div>

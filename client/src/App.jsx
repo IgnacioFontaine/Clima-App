@@ -37,9 +37,9 @@ function App() {
         </div>
       </div>
       <div>
-        <div>
-          <h2>Select the City:</h2>
-          <select name='Cities' onChange={handleCity} >
+        <div style={{display:"flex", p:1, justifyContent:"center"}}>
+          <h2 style={{color:"black"}}>Select the City:</h2>
+          <select name='Cities' onChange={handleCity} style={{ height:"35px", borderRadius:"5px",marginTop:"20px", marginLeft:"10px" }} >
             {allCityes.map(city => 
               <option value={city.name} key={city.id}>
                 {city.name}</option>
