@@ -44,26 +44,29 @@ function App() {
         </div>
         <div>
           <div style={{display:"flex", p:1, justifyContent:"center"}}>
-          <h2 style={{color:"black"}}>Select the City:</h2>
-          <select name='Cities' onChange={handleCity} style={{ height:"35px", borderRadius:"5px",marginTop:"20px", marginLeft:"10px" }} >
+            <h2 style={{ color: "black" }}>Select the City:</h2>
+            <div style={{display:"flex", flexDirection:"column"}}>
+              <select name='Cities' onChange={handleCity} style={{ height:"35px", borderRadius:"5px",marginTop:"20px", marginLeft:"10px" }} >
             {allCityes.map(city => 
               <option value={city.name} key={city.id}>
                 {city.name}</option>
             )}
-          </select>
+            </select>
+            <div>
+              {temp && (
+              <div>
+                <div>
+                  <h2>Wheater</h2>
+                </div>
+                <CardWheater temp={temp}  />
+              </div>
+            )}
+            </div>
+            </div>
         </div>
         </div>
       </div>
-      <div>
-        {temp && (
-        <div>
-          <div>
-            <h2>Wheater</h2>
-          </div>
-          <CardWheater temp={temp}  />
-        </div>
-      )}
-      </div>
+      
     </>
   )
 }
