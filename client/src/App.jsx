@@ -55,9 +55,6 @@ function App() {
             <div>
               {temp && (
               <div>
-                <div>
-                  <h2>Wheater</h2>
-                </div>
                 <CardWheater temp={temp}  />
               </div>
             )}
