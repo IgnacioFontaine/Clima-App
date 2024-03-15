@@ -49,7 +49,7 @@ function App() {
             <div style={{display:"flex", flexDirection:"column"}}>
               <select name='Cities' onChange={handleCity} style={{ height:"35px", borderRadius:"5px",marginTop:"20px", marginLeft:"10px" }} >
             {allCityes.map(city => 
-              <option value={city.name} key={city.id}>
+              <option value={city.value} key={city.id}>
                 {city.name}</option>
             )}
             </select>
