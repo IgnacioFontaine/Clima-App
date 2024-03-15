@@ -7,7 +7,6 @@ function CardWheater({ temp }) {
   var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
 
   const ciudad = argentinianCities.filter(ciudad => ciudad.name == name);
-  console.log(ciudad[0].mapa);
 
 
   return (
@@ -23,9 +22,9 @@ function CardWheater({ temp }) {
               <p style={{color:"black"}}>Humedad: <strong>{main? main.humidity : null}%</strong></p>
           </div>
       </div>
-      <div>
-        <div id="image"><img id="1" src={ciudad? ciudad[0].mapa : null} alt="Mapa Ciudad" /></div>
-      </div>
+      {/* {ciudad?(<div>
+        <div id="image"><img id="1" src={ciudad[0].mapa} alt="Mapa Ciudad" /></div>
+      </div>):("") } */}
     </>
   )
 }

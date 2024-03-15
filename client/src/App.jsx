@@ -26,6 +26,7 @@ function App() {
     const city = event.currentTarget.value;
     setSelectCity(city);
     const temp_city = await getWeather(city)
+    console.log(temp_city);
     setTemp(temp_city)
   }
   
