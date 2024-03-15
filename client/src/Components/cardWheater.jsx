@@ -7,8 +7,12 @@ import LaPampa_mapa from "../assets/Mapas/LaPampa.jpg"
 import LaRioja_mapa from "../assets/Mapas/LaRioja.jpg"
 import Mendoza_mapa from "../assets/Mapas/Mendoza.jpg"
 import EntreRios_mapa from "../assets/Mapas/EntreRios.jpg"
-import EntreRios_mapa from "../assets/Mapas/EntreRios.jpg"
-import EntreRios_mapa from "../assets/Mapas/EntreRios.jpg"
+import Misiones_mapa from "../assets/Mapas/Misiones.jpg"
+import Salta_mapa from "../assets/Mapas/Salta.jpg"
+import Neuquen_mapa from "../assets/Mapas/Neuquen.jpg"
+import SanLuis_mapa from "../assets/Mapas/SanLuis.jpg"
+import SantaCruz_mapa from "../assets/Mapas/SantaCruz.jpg"
+import Tucuman_mapa from "../assets/Mapas/Tucuman.jpg"
 
 
 function CardWheater({ temp }) {
