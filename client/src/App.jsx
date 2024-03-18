@@ -19,7 +19,7 @@ function App() {
   }
   
   return (
-    <div style={{ backdropFilter: 'blur(10px)', padding:"70px"}}>
+    <div style={{ backdropFilter: 'blur(10px)', padding:"70px", borderRadius:"4px"}}>
       <div  >
         <div style={{display:"flex", textAlign:"center"}} >
           <img src={wheaterImage} style={{ height: "200px", width:"200px", p:1, color:"black"  }} ></img>
