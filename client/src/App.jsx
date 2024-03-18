@@ -9,17 +9,18 @@ function App() {
   const [selectCity, setSelectCity] = useState("Buenos Aires");
   const [allCityes, setAllCityes] = useState(argentinianCities);
   const [temp, setTemp] = useState(null);
-  const [forecast, setForecast] = useState(null);
+  // const [forecast, setForecast] = useState(null);
   
 
   const handleCity = async (event) => {
     const city = event.currentTarget.value;
     setSelectCity(city);
     const temp_city = await getWeather(city)
-    const forecast_city = await getFourecast(city)
     setTemp(temp_city)
   }
   
+  
+
   return (
     <div style={{ backdropFilter: 'blur(10px)', padding:"70px", borderRadius:"4px"}}>
       <div  >

@@ -19,7 +19,7 @@ export const getFourecast = async (name) => {
  
   const options = {
     method: 'GET',
-    url: `https://pro.openweathermap.org/data/2.5/forecast/hourly?q=${city_name},AR&appid=${APP_KEY}`
+    url: `https://openweathermap.org/data/2.5/forecast/hourly?q=${city_name},AR&appid=27b314f308c2f99c7e98a70b8529d801`
   }
   
   return await ajax(options)
