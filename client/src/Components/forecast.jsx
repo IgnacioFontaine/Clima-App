@@ -1,10 +1,6 @@
-import argentinianCities from "../herramientas/cities";
-import mapa_arg from "../assets/mapa_completo-removebg-preview.png"
 
 function forecastCard({ temp }) {
   const { main, weather, name } = temp;
-
-
 
   return (
     <>
@@ -17,5 +13,12 @@ function forecastCard({ temp }) {
       </div>
     </>
   )
+}
+
+
+function Forecast() {
+  return (<div>
+    
+    </div>)
 }
 
